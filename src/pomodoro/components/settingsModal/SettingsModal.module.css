@@ -1,0 +1,93 @@
+.SettingsForm {
+    max-width: 400px;
+    padding: 10px 0;
+}
+.SettingsForm__ButtonWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SettingsModal__okButton {
+    height: 40px;
+    padding: 0 30px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 3px 0px 0px black;
+    color: black;
+
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+
+    transition: background-color .3s ease-in-out;
+}
+
+.SettingsModal__okButton:hover {
+    background-color: #90ee90;
+}
+
+.SettingsModal__okButton:active {
+    box-shadow: none;
+    transform: translateY(3px);
+}
+
+.SettingsModal__Form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Button {
+    height: 40px;
+    padding: 0 15px;
+    margin: 10px 5px 15px 5px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 3px 0px 0px black;
+    color: black;
+
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+
+    transition: background-color .3s ease-in-out;
+}
+
+.Button:hover {
+    background-color: rgba(255,255,255, 0.3);
+}
+
+.Button:active {
+    box-shadow: none;
+    transform: translateY(3px);
+}
+
+@media (min-width: 768px) {
+    .SettingsModal__okButton {
+        height: 48px;
+        font-size: 1.8rem;
+        padding: 0 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .SettingsModal__okButton {
+        height: 60px;
+        font-size: 2.5rem;
+        padding: 0 50px;
+    }
+}

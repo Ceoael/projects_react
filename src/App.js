@@ -1,23 +1,50 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import {Switch, Route, useLocation} from 'react-router-dom';
+import {AnimatePresence} from 'framer-motion';
+
 import './App.css';
 
+import Toolbar from './components/Toolbar/Toolbar';
+import SideDrawer from './components/SideDrawer/SideDrawer';
+
+import ProjectsPresentation from './components/ProjectPresentation/ProjectsPresentation';
+import PomodoroBuilder from './pomodoro/containers/pomodoroBuilder/PomodoroBuilder';
+import Todo from './todo/containers/TodoAppBuilder/TodoAppBuilder';
+import RouteAnim from './components/RouteAnim/RouteAnim';
+
+import {Provider} from 'react-redux';
+import store from './pomodoro/store/store';
+
 function App() {
+  const location = useLocation();
+
+  const [show, setShow] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Toolbar openSideDrawer={() => setShow(true)}/>
+      <SideDrawer closeSideDrawer={() => setShow(false)} show={show}/>
+        <AnimatePresence exitBeforeEnter>
+          <Switch location={location} key={location.pathname}>
+            <Route path="/pomodoro" exact >
+              <RouteAnim>
+                <Provider store={store}>
+                  <PomodoroBuilder />
+                </Provider>
+              </RouteAnim>
+              </Route>
+            <Route path="/todo" exact >
+              <RouteAnim>
+                <Todo />
+              </RouteAnim>
+            </Route>
+            <Route path='*'>
+              <RouteAnim>
+                <ProjectsPresentation />
+              </RouteAnim>
+            </Route>
+          </Switch>
+        </AnimatePresence>
     </div>
   );
 }

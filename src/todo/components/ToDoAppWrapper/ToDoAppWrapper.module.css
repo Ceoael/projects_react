@@ -1,0 +1,44 @@
+.TodoApp__Background {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+
+    background-color: #33343c; 
+}
+
+.TodoApp__Wrapper {
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 10px; 
+    min-height: 100vh;
+}
+
+@media (min-width: 640px) {
+    .TodoApp__Wrapper {
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    .TodoApp__Wrapper {
+        width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    .TodoApp__Wrapper {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .TodoApp__Wrapper {
+        width: 50%;
+    }
+}

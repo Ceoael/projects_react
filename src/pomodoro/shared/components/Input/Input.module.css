@@ -1,0 +1,63 @@
+:root {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Input {
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.Input__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.Input__label {
+    padding-bottom: 5px;
+
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+}
+.Input__label::first-letter {
+    text-transform: capitalize;
+}
+.Input__input {
+    width: 100%;
+    padding: 10px 10px;
+
+    border-radius: 5px;
+    border: 2px solid transparent;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+
+    outline: none;
+    background-color: #f2f5f7;
+    transition: border-color .3s ease-in-out, color .3s ease-in-out,
+        background-color .3s ease-in-out;
+}
+.Input__input:focus {
+    border-color: #0071fe;
+}
+
+.Input__input--error {
+    background: #fddfe2;
+    color: #f23648;
+}
+.Input__input--error:focus {
+    border-color: #f23648;
+}
+.Input__error {
+    padding-top: 10px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #f23648;
+}
+.Input__error::first-letter {
+    text-transform: capitalize;
+}

@@ -1,0 +1,24 @@
+.TodoTasks {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.TodoTasks__Task--enter {
+    opacity: 0;
+}
+
+.TodoTasks__Task--enterActive {
+    opacity: 1;
+    transition: opacity 300ms ease;
+}
+
+.TodoTasks__Task--exit {
+    opacity: 1;
+}
+
+.TodoTasks__Task--exitActive {
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
